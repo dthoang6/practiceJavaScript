@@ -12,6 +12,37 @@
         Click here to display Date and Time</button>
     <p id="demo"></p>
     <hr>
+
+    <h1>Change HTML Content</h1>
+    <p id="demo1">Hello HTML5!</p>
+    <button type="button" onclick="document.getElementById('demo1').innerHTML = 'Hello JavaScript!'">
+        Click here to change the above content</button>
+    <hr>
+
+    <h1>Change HTML Attribute Values: Source attribute of image</h1>
+    <button onclick="document.getElementById('bulb').src = '../my_first_JavaScript/bulb_on.gif'">
+    Turn on the light!</button>
+
+    <img src="../my_first_JavaScript/bulb_off.gif" alt="picture of bulb" id="bulb">
+
+    <button onclick="document.getElementById('bulb').src = '../my_first_JavaScript/bulb_off.gif'">
+    Turn off the light...</button>
+    <hr>
+
+    <h1>Change HTML Styles</h1>
+    <p id="demo2">I am Front-Ent Web Developer!</p>
+    <button type="button" onclick="document.getElementById('demo2').style.fontSize = '36px'">
+    Click me to change the font-size</button>
+    <button type="button" onclick="document.getElementById('demo2').style.color = 'red' ">
+    Click me to change the color</button>
+    <hr> 
     
+    <h1>Hide HTML Element</h1> 
+    <p id="demo3">Good morning from California!</p>
+    <button type="button" onclick="document.getElementById('demo3').style.display='none'">
+    Click here to hide the content</button>
+    <button type="button" onclick="document.getElementById('demo3').style.display='block'">
+    Click here to display the content again!</button>
+
 </body>
 </html>
