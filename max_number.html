@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Find Max Number In Array</title>
+</head>
+<body>
+    <p>3 ways to find maximum number in an array</p>
+    <p>1. Using sort() method with ascending order</p>
+    <button onclick="maxSolution1(arr)">Find Max Number</button>
+    <p id="solution1"></p>
+
+    <p>2. Using sort() method with descending order</p>
+    <button onclick="maxSolution2(arr)">Find Max Number</button>
+    <p id="solution2"></p>
+
+    <p>3. Using Math.max() method</p>
+    <button onclick="maxSolution3(arr)">Find Max Number</button>
+    <p id="solution3"></p>
+    <script>
+        var arr = [1, 10, 5, 25, 40, 59, 23];
+
+        function maxSolution1(arr) {
+            arr.sort(function(a, b) {return a-b});
+            document.getElementById("solution1").innerHTML = arr[arr.length - 1];
+        }
+
+        function maxSolution2(arr) {
+            arr.sort(function(a, b) {return b-a});
+            document.getElementById("solution2").innerHTML = arr[0];
+        }
+
+        function maxSolution3(arr) {
+            document.getElementById("solution3").innerHTML = Math.max.apply(null, arr);
+        }
+    </script>
+</body>
+</html>
