@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Array Iteration</title>
+</head>
+<body>
+        <h2>JavaScript Array.forEach()</h2>
+        <p>Calls a function once for each array element.</p>
+        <p id="demo1"></p>
+    
+        <h2>JavaScript Array.map()</h2>
+        <p>Create a new array by performing a function on each array element.</p>
+        <p id="demo2"></p>
+
+        <h2>JavaScript Array.filter()</h2>
+        <p>Create a new array from elements that passes the test from function.</p>
+        <p id="demo3"></p>
+
+        <h2>JavaScript Array.reduce()</h2>
+        <p>run a function on each array element to reduce it to a single value</p>
+        <p id="demo4"></p>
+    <script>
+        var number = [1, 10, 9, 20, 56];
+        var txt = " ";
+        number.forEach(method1);
+
+        document.getElementById("demo1").innerHTML = txt;
+        function method1(value) {
+            txt = txt + value + "<br>";
+        }
+
+        function method2(value) {
+            return value * 2;
+        }
+        document.getElementById("demo2").innerHTML = number.map(method2);
+
+        function method3(value) {
+            return value > 10;
+        }
+        document.getElementById("demo3").innerHTML = number.filter(method3);
+
+        function method4(total, value) {
+            return total + value;
+        }
+        document.getElementById("demo4").innerHTML = number.reduce(method4);
+    </script>
+</body>
+</html>
