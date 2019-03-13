@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Validation Form</title>
+</head>
+<body>
+    <form action="/action_page.php" name="myForm" method="POST" onsubmit="return validateForm()">
+      Name: <input type="text" name = "fname">
+      <input type="submit" value="Submit">
+    </form>
+
+    <hr>
+    <p>Using Constraint Validation DOM Methods</p>
+    <input type="number" id="demo1" min="100" max="200" required>
+    <button onclick="myFunction()">OK</button>
+    <p id="demo2"></p>
+
+    <script>
+      function validateForm () {
+          var x = document.forms["myForm"]["fname"].value;
+          if (x == "") {
+              alert("Name must be filled out");
+              return false;
+          }
+      }
+
+      //Constraint Validation DOM methods: checkValidity(), setCustomValidity()
+      function myFunction() {
+          var inputObj = document.getElementById("demo1");
+          if (inputObj.checkValidity()) {
+              document.getElementById("demo2").innerHTML = "Input Ok";
+          }
+          else {
+            document.getElementById("demo2").innerHTML = inputObj.validationMessage;
+          }
+      }
+    </script>
+    
+</body>
+</html>
