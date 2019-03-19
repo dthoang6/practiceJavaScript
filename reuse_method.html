@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reuse Method</title>
+</head>
+<body>
+    <h2>The JavaScript call() Method</h2>
+    <p>call() method is a predefined JavaScript method. An object can use a method belonging to another object with call()</p>
+    
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    
+    <script>
+        var person = {
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        var person1 = {
+            firstName: "Tom",
+            lastName: "Hoang"
+        };
+
+        var person2 = {
+            firstName: "Trang",
+            lastName: "Nguyen"
+        };
+        //call() method, object as an arguments, reuse method of other objects.
+        document.getElementById("demo").innerHTML = person.fullName.call(person1);
+        //apply() method
+        document.getElementById("demo1").innerHTML = person.fullName.apply(person2);
+
+        document.a
+</script>
+</body>
+</html>
