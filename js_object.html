@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Object</title>
+</head>
+<body>
+
+    <p id="demo"></p>
+    
+    <p id="demo1"></p>
+    <script>
+       var person = {
+        firstName: "Dat",
+        lastName: "Hoang",
+        language: "en",
+        //using function
+        fullName: function() {
+          return this.firstName + " " + this.lastName;
+        },
+        //using getters
+        get fullName() {
+          return this.lastName + " " + this.lastName;
+        },
+        get lang() { return this.language.toUpperCase(); }
+      };
+
+      //for...in loop: execute once for each property
+      var txt = "";
+      var x;
+      for (x in person) {
+        txt += person[x] + " ";
+      }
+    
+    </script>
+</body>
+</html>
