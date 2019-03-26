@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas</title>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+
+    <canvas id="circle" width="200" height="100" style="border:1px solid #000000;"></canvas>
+
+    <canvas id="text" width="200" height="100" style="border:1px solid #000000;"></canvas>
+
+    <canvas id="linearGradient" width="200" height="100" style="border:1px solid #000000;"></canvas>
+
+    <script>
+        //draw line
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.moveTo(0, 0);
+        ctx.lineTo(200, 100);
+        ctx.stroke();
+
+        //draw circle
+        var x = document.getElementById("circle");
+        var xCircle = x.getContext("2d");
+        xCircle.beginPath();
+        xCircle.arc(95, 50, 40, 0, 2 * Math.PI);
+        xCircle.stroke();
+
+        //draw a text
+        var y = document.getElementById("text");
+        var yText = y.getContext("2d");
+        yText.font = "30px Arial";
+        yText.fillText("Hello World", 10, 50);
+
+        //draw linear gradient
+        var z = document.getElementById("linearGradient");
+        var zLinear  = z.getContext("2d");
+        //create gradient
+        var grd = zLinear.createLinearGradient(0,0,200,0);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(1, "white");
+        zLinear.fillStyle = grd;
+        zLinear.fillRext(10, 10, 150, 80);
+
+    </script>
+</body>
+</html>
